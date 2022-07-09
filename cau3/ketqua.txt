@@ -1,0 +1,11 @@
+k run busybox --image=busybox:1.31.1 --labels="accesssss=acceptedd" --command -- /bin/sh -c wget 10.40.0.2:80
+
+--2022-07-09 09:05:58--  http://10.40.0.2/
+Connecting to 10.40.0.2:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 615 [text/html]
+Saving to: ‘index.html.1’
+
+index.html.1                   100%[===================================================>]     615  --.-KB/s    in 0s      
+
+2022-07-09 09:05:58 (103 MB/s) - ‘index.html.1’ saved [615/615]

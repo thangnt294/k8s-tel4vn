@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+spec:
+  containers:
+    - name: c1
+      image: busybox:1.31.1
+      command: ["/bin/sh", "-c"]
+      args: ["while sleep 5; do date >>/vol/date.log; done"]
+      volumeMounts:
+      - mountPath: /vol
+        name: vol
+    - name: c2
+      image: busybox:1.31.1
+      command: ["/bin/sh", "-c"]
+      args: ["tail -f /date-data/date.log"]
+      volumeMounts:
+      - mountPath: /date-data
+        name: vol
+  volumes:
+  - name: vol
+    emptyDir: {}

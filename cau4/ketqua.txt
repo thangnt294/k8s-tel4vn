@@ -1,0 +1,30 @@
+k get pod -o wide
+NAME                      READY   STATUS    RESTARTS   AGE    IP          NODE           NOMINATED NODE   READINESS GATES
+pod4                      1/1     Running   0          97s    10.46.0.1   kube-master    <none>           <none>
+webapp-5f4c4c965f-5rfq4   1/1     Running   0          114m   10.32.0.4   kube-worker1   <none>           <none>
+webapp-5f4c4c965f-8lxcd   1/1     Running   0          114m   10.32.0.5   kube-worker1   <none>           <none>
+
+curl 10.46.0.1:80
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
